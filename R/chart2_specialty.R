@@ -4,7 +4,8 @@
 #
 # Source: Khandwala et al., independent retrospective chart review of 193
 # men diagnosed with hypogonadism (50 urology, 49 primary care, 44
-# endocrinology, 50 HIV medicine); p < .001. "Repeat confirmatory test" -
+# endocrinology, 50 HIV medicine); p = .012 for the comparison across
+# specialties. "Repeat confirmatory test" -
 # a second low morning testosterone reading before starting treatment -
 # is a narrower, differently defined metric than the full workup shown
 # in the companion chart, from a separate patient cohort.
@@ -31,7 +32,7 @@ df$fill_color <- ifelse(df$specialty %in% c("Primary care", "HIV medicine"),
 
 p <- ggplot(df, aes(x = specialty, y = percent_without_confirmatory_test)) +
   geom_col(aes(fill = fill_color), color = "#2a2a2a", linewidth = 0.6, width = 0.62) +
-  geom_text(aes(label = paste0(percent_without_confirmatory_test, "%"),
+  geom_text(aes(label = sprintf("%.1f%%", percent_without_confirmatory_test),
                 y = percent_without_confirmatory_test + 3),
             hjust = 0, fontface = "bold", size = 6.2, color = ink) +
   scale_fill_identity() +
@@ -40,13 +41,13 @@ p <- ggplot(df, aes(x = specialty, y = percent_without_confirmatory_test)) +
   labs(
     title = "No Specialty Came Close\nto Fixing It",
     subtitle = paste0(
-      "In an independent study, primary care skipped the repeat confirmatory test\n",
-      "most often, but even the best-performing specialty still missed it on\n",
-      "nearly half its patients."
+      "In an independent study, HIV medicine skipped the repeat confirmatory test\n",
+      "most often, but even the best-performing specialty, urology, still missed it\n",
+      "on nearly half its patients."
     ),
     caption = paste0(
       "Source: Khandwala et al., independent retrospective chart review of 193 men diagnosed with hypogonadism\n",
-      "(50 urology, 49 primary care, 44 endocrinology, 50 HIV medicine); p < .001. \"Repeat confirmatory test\"\n",
+      "(50 urology, 49 primary care, 44 endocrinology, 50 HIV medicine); p = .012. \"Repeat confirmatory test\"\n",
       "- a second low morning testosterone reading before starting treatment - is a narrower, differently\n",
       "defined metric than the full workup shown in the companion chart, from a separate patient cohort."
     )
