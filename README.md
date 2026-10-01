@@ -1,6 +1,6 @@
-# Measure of a Man
+# A Number Isn't a Diagnosis
 
-Data and R code behind the charts in ["Measure of a Man"](https://notesfromtheabstract.com), a piece on how testosterone prescribing in the US skips the confirmatory second draw the diagnostic guidelines require.
+Data and R code behind the charts in ["A Number Isn't a Diagnosis"](https://notesfromtheabstract.com), a piece on how testosterone prescribing in the US skips the confirmatory second draw the diagnostic guidelines require.
 
 ## What's here
 
