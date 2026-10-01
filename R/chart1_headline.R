@@ -1,12 +1,13 @@
 # chart1_headline.R
 #
-# "Even at an Academic Medical Center, 88% Skipped the Standard"
+# "Even at an Academic Medical Center, 88% Fell Short of the Standard"
 #
 # Source: Sinha et al., presented at ENDO 2026 (Endocrine Society annual
 # meeting), retrospective chart review of 200 men prescribed testosterone
 # at University of Michigan Medicine, 2020-2025. "Guideline-concordant" =
 # two morning total/free/bioavailable testosterone draws (5-10am), LH
-# and/or FSH measured, and no contraindications present.
+# and/or FSH measured, and no contraindications present. 55% of the cohort
+# had obstructive sleep apnea, which counted as a contraindication.
 #
 # Reproduces charts/chart1_headline.png
 
@@ -35,7 +36,7 @@ p <- ggplot(df) +
   scale_fill_manual(values = setNames(df$fill, df$category)) +
   coord_cartesian(xlim = c(0, 100), ylim = c(0, 1), expand = FALSE) +
   labs(
-    title = "Even at an Academic Medical Center,\n88% Skipped the Standard",
+    title = "Even at an Academic Medical Center,\n88% Fell Short of the Standard",
     subtitle = paste0(
       "Share of men prescribed testosterone at Michigan Medicine who received\n",
       "the full guideline-concordant diagnostic workup before starting."
@@ -44,7 +45,8 @@ p <- ggplot(df) +
       "Source: Sinha et al., presented at ENDO 2026 (Endocrine Society annual meeting), retrospective chart\n",
       "review of 200 men prescribed testosterone at University of Michigan Medicine, 2020-2025.\n",
       "\"Guideline-concordant\" = two morning total/free/bioavailable testosterone draws (5-10am),\n",
-      "LH and/or FSH measured, and no contraindications present."
+      "LH and/or FSH measured, and no contraindications present. 55% of the cohort had obstructive sleep apnea,\n",
+      "which counted as a contraindication."
     )
   ) +
   theme_void(base_size = 14) +

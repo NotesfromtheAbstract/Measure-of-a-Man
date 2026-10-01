@@ -4,9 +4,9 @@
 #
 # Source: Khandwala et al., independent retrospective chart review of 193
 # men diagnosed with hypogonadism (50 urology, 49 primary care, 44
-# endocrinology, 50 HIV medicine); p = .012 for the comparison across
-# specialties. "Repeat confirmatory test" -
-# a second low morning testosterone reading before starting treatment -
+# endocrinology, 50 HIV medicine); The paper reports the specialty
+# difference as p < .001 (abstract) and p = .012 (results), so no p-value is
+# shown. "Repeat confirmatory test" - a second low morning testosterone reading before starting treatment -
 # is a narrower, differently defined metric than the full workup shown
 # in the companion chart, from a separate patient cohort.
 #
@@ -47,7 +47,7 @@ p <- ggplot(df, aes(x = specialty, y = percent_without_confirmatory_test)) +
     ),
     caption = paste0(
       "Source: Khandwala et al., independent retrospective chart review of 193 men diagnosed with hypogonadism\n",
-      "(50 urology, 49 primary care, 44 endocrinology, 50 HIV medicine); p = .012. \"Repeat confirmatory test\"\n",
+      "(50 urology, 49 primary care, 44 endocrinology, 50 HIV medicine); \"Repeat confirmatory test\"\n",
       "- a second low morning testosterone reading before starting treatment - is a narrower, differently\n",
       "defined metric than the full workup shown in the companion chart, from a separate patient cohort."
     )
